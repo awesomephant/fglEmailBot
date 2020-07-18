@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.post(`/${process.env.TT_URL}`, (req, res) => {
+    console.log("Received post request...")
     if (req.message) {
         console.log("Received message, attempting to send email...")
         const email = `
