@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     res.send('FGL email bot is running.')
 })
 
-app.post(`/${env.TT_URL}`, (req, res) => {
+app.post(`/${process.env.TT_URL}`, (req, res) => {
     if (req.message) {
         console.log("Received message, attempting to send email...")
         const email = `
