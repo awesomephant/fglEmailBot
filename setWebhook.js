@@ -1,7 +1,3 @@
-const https = require('https')
-const url = "https://fgl-email-bot.herokuapp.com/"
-
-
-https.get(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/setWebhook?url=${url}`, (res) => {
-    console.log(res.body)
-})
+require('dotenv').config();
+const url = `https://fgl-email-bot.herokuapp.com/${process.env.TT_URL}`
+console.log(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/setWebhook?url=${url}`)
