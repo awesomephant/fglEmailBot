@@ -31,7 +31,7 @@ app.post(`/${process.env.TT_URL}`, (req, res) => {
         console.log("Received message, attempting to send email...")
 
         var message = {
-            from: '"FGL-Vorstand bei Telegram" vorstand@fgl-konstanz.de',
+            from: "vorstand@fgl-konstanz.de",
             to: process.env.TARGET_EMAIL,
             subject: "FGL Telegram Bot",
             replyTo: "vorstand@fgl-konstanz.de",
