@@ -39,9 +39,10 @@ app.post(`/${process.env.TT_URL}`, (req, res) => {
 
         transporter.sendMail(message, (err, info) => {
             if (err) { console.log(err) }
+            console.log("Email sent.")
+            res.send(true)
         })
 
-        res.send(true)
 
     } else {
         console.log("Request invalid.")
