@@ -1,14 +1,13 @@
 const express = require('express')
 const app = express()
-const port = 3000
-const secrets = require('./secrets.json')
+const port = 80
 
 app.get('/', (req, res) => {
     res.send('FGL email bot is running.')
 })
 
-app.get(`/${process.env.TELEGRAM_TOKEN}`, (req, res) => {
-    res.send('FGL Email Bot')
+app.post(`/`, (req, res) => {
+    console.log(req)
 })
 
 app.listen(port, () => console.log(`Listening at port ${port}`))
