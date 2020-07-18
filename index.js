@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 app.post(`/${process.env.TT_URL}`, (req, res) => {
     console.log("Received post request...")
-    if (req.body.message) {
+    if (req.body.message && req.body.message.from.username !== "etlgr_bot") {
         console.log("Received message, attempting to send email...")
 
         var message = {
