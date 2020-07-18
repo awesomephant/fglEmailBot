@@ -24,6 +24,7 @@ ${req.body.message.from.first_name} ${req.body.message.from.last_name} (${req.bo
             console.log(err && err.stack);
             if (!err){
                 console.log(`Email set to ${process.env.TARGET_EMAIL}`)
+                res.send(true)
             }
         });
 
