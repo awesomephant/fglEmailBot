@@ -10,10 +10,10 @@ app.get('/', (req, res) => {
 
 app.post(`/${process.env.TT_URL}`, (req, res) => {
     console.log("Received post request...")
-    if (req.message) {
+    if (req.body.message) {
         console.log("Received message, attempting to send email...")
         const email = `
-${req.message.from.first_name} ${req.message.from.last_name} (${req.message.from.username}) schreibt: ${req.message.text}
+${req.body.message.from.first_name} ${req.body.message.from.last_name} (${req.body.message.from.username}) schreibt: ${req.message.text}
         `
         sendmail({
             from: 'hi@maxkoehler.com',
@@ -27,6 +27,9 @@ ${req.message.from.first_name} ${req.message.from.last_name} (${req.message.from
             }
         });
 
+    } else {
+        console.log("Request invalid.")
+        res.send('Invalid.')
     }
 })
 
