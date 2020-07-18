@@ -13,7 +13,7 @@ app.post(`/${process.env.TT_URL}`, (req, res) => {
     if (req.body.message) {
         console.log("Received message, attempting to send email...")
         const email = `
-${req.body.message.from.first_name} ${req.body.message.from.last_name} (${req.body.message.from.username}) schreibt: ${req.message.text}
+${req.body.message.from.first_name} ${req.body.message.from.last_name} (${req.body.message.from.username}) schreibt: ${req.body.message.text}
         `
         sendmail({
             from: 'hi@maxkoehler.com',
